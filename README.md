@@ -1,5 +1,7 @@
 # point-alpaca
 
+![alpaca](https://point-alpaca.fra1.cdn.digitaloceanspaces.com/alpaca.png){: width=600px}
+
 ## What is this?
 
 This is released weights recreated from [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), an experiment in fine-tuning LLaMA on a synthetic instruction dataset.
