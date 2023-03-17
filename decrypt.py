@@ -28,7 +28,9 @@ def main(input_file, key_file, output_dir):
         expected_hash = in_file.read(hasher.digest_size)
 
         # Create the output file path without the checksum in the filename
-        output_file = os.path.join(output_dir, input_file_basename.split(".")[0])
+        # remove .<checksum>.enc
+        input_file_basename = input_file_basename[:-len(checksum_hex) - 5]
+        output_file = os.path.join(output_dir, input_file_basename)
 
         with open(output_file, "wb") as out_file:
             bytes_read = 0
