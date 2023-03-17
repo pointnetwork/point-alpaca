@@ -1,6 +1,6 @@
 # point-alpaca
 
-![alpaca](https://point-alpaca.fra1.cdn.digitaloceanspaces.com/alpaca.png){: width=600px}
+![alpaca](https://point-alpaca.fra1.cdn.digitaloceanspaces.com/alpaca.png){: width=200px}
 
 ## What is this?
 
