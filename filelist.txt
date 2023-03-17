@@ -1,0 +1,6 @@
+https://point-alpaca.fra1.digitaloceanspaces.com/added_tokens.json.75e3ca5df2973756aa612cb17246ef6020a68ff8d94671508987d373642f7a36.enc
+https://point-alpaca.fra1.digitaloceanspaces.com/config.json.caf9cac32580e31af8254f66c5a070741d70b15a651721748189180325b7d5a8.enc
+https://point-alpaca.fra1.digitaloceanspaces.com/generation_config.json.c5c8961ed243834883fb4e45e8850d3873d6100fde97817f59d275a90eba269d.enc
+https://point-alpaca.fra1.digitaloceanspaces.com/pytorch_model-00001-of-00003.bin.90d2ab95a32aeb9362814d8b86db2af5454baab8ea3aa8230c271d6962abb9db.enc
+https://point-alpaca.fra1.digitaloceanspaces.com/pytorch_model-00002-of-00003.bin.f3c10a4f5c8beafc6667d34557b64ba479e4dde6ef10672287857b329b7e3229.enc
+https://point-alpaca.fra1.digitaloceanspaces.com/pytorch_model-00003-of-00003.bin.72bf4c96aa6b0c7b56b0336791960da9c75de324ea1131ea4bfc20fde41115c8.enc
