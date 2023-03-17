@@ -1,6 +1,6 @@
 # point-alpaca
 
-![alpaca](https://point-alpaca.fra1.cdn.digitaloceanspaces.com/alpaca.png | width = 300)
+<img src="https://point-alpaca.fra1.cdn.digitaloceanspaces.com/alpaca.png" height="200" width="200">
 
 ## What is this?
 
