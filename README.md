@@ -6,6 +6,10 @@
 
 This is released weights recreated from [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), an experiment in fine-tuning LLaMA on a synthetic instruction dataset.
 
+## Can I try this somewhere?
+
+Yes! Announcement thread to our frontend where you can try the 7B: https://twitter.com/PointNetwork/status/1637178814210908160
+
 ## How to distill the weights
 
 1. Put LLaMA weights into `original/` folder, such that 7B version would be at `original/7B`
