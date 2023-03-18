@@ -20,14 +20,8 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
         device_map = "balanced_low_0"
 
     # config
-    config = get_model_config(model_name)
-    n_layers = num_layers(config)
-    print('n_layers', n_layers)
     gpu_count = torch.cuda.device_count()
     print('gpu_count', gpu_count)
-    per_gpu = n_layers // gpu_count
-    _breakmodel_gpulayers = list([per_gpu] * gpu_count if n_layers % gpu_count == 0 else [per_gpu] * (gpu_count - 1) + [per_gpu + n_layers % gpu_count])
-    _breakmodel_gpulayers.reverse()
 
     tokenizer = transformers.LLaMATokenizer.from_pretrained(model_name)
     model = transformers.LLaMAForCausalLM.from_pretrained(
