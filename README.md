@@ -13,7 +13,7 @@ This is released weights recreated from [Stanford Alpaca](https://github.com/tat
 2. Download point-alpaca diffs into `encrypted/` folder:
 
 ```
-curl -O -J -L -K filelist.txt -o "encrypted/#1"
+wget -P encrypted/ -i filelist.txt
 ```
 
 3. Run the following command to decrypt:
