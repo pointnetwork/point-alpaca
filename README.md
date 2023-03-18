@@ -24,6 +24,8 @@ for f in "encrypted"/*; do if [ -f "$f" ]; then python3 decrypt.py "$f" "origina
 
 You will have finetuned weights in the `result/` folder.
 
+Now that you have them, you can delete the files in `encrypted/` folder.
+
 ## How to chat with the model
 
 Other people will probably build better UIs, but for now, try running `python3 chat.py`
