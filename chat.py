@@ -38,7 +38,7 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
 
     generator = model.generate
 
-load_model("./results")
+load_model("./result")
 
 history = []
 
