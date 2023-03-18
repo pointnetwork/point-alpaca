@@ -38,7 +38,7 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
 
     generator = model.generate
 
-load_model("/root/stanford_alpaca/out")
+load_model("./results")
 
 history = []
 
