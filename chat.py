@@ -1,6 +1,12 @@
 import torch
 import transformers
 
+from warnings import warn
+from json import load as load_json
+
+
+MODEL_MAX_LENGTH = load_json(open("result/tokenizer_config.json"))["model_max_length"]
+
 
 def load_model(path: str, eight_bit: bool = False, device_map="auto"):
     global model, tokenizer, generator
@@ -8,16 +14,11 @@ def load_model(path: str, eight_bit: bool = False, device_map="auto"):
     if device_map == "zero":
         device_map = "balanced_low_0"
 
-    # config
-    gpu_count = torch.cuda.device_count()
-    print('gpu_count', gpu_count)
-
     tokenizer = transformers.LLaMATokenizer.from_pretrained(path)
     model = transformers.LLaMAForCausalLM.from_pretrained(
         path,
         device_map=device_map,
         torch_dtype=torch.float16,
-        # max_memory = {0: "14GB", 1: "14GB", 2: "14GB", 3: "14GB",4: "14GB",5: "14GB",6: "14GB", 7: "14GB"},
         load_in_8bit=eight_bit,
         low_cpu_mem_usage=True,
         cache_dir="cache"
@@ -36,9 +37,15 @@ def chat_with_alpaca(model_generator, tokenizer):
 
             user_input = input("Human: ")
 
-            history.append("Human: " + user_input)
+            if len(user_input) > MODEL_MAX_LENGTH:
+                warn(f"model input cannot be longer than {MODEL_MAX_LENGTH} ({len(user_input)} > {MODEL_MAX_LENGTH}), text will be troncated.")
+
+            history.append(f"Human: {user_input}")
 
             model_input = "\n\n".join(history) + "\n\nAssistant: "
+            id = max(0, len(model_input) - MODEL_MAX_LENGTH)
+
+            model_input = model_input[id:]
 
             gen_in = tokenizer(model_input, return_tensors="pt").input_ids.cuda()
 
@@ -60,11 +67,12 @@ def chat_with_alpaca(model_generator, tokenizer):
 
             response = generated_text[len(model_input):]
 
-            response = "Assistant:" + response.split(user_input)[0].strip()
+            response = f"Assistant: {response.split(user_input)[0].strip()}"
 
-            print("\n", response, end="\n\n")
+            print(f"\n{response}", end="\n\n")
 
             history.append(response)
+
 
 
 if __name__ == "__main__":
