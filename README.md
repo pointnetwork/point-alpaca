@@ -6,6 +6,8 @@
 
 This is released weights recreated from [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), an experiment in fine-tuning LLaMA on a synthetic instruction dataset.
 
+This is not LoRA, this is a full fine-tune for 3 epochs on 8x A100 80 GB, loss ≈2 ➔ ≈0.5.
+
 ## Can I try this somewhere?
 
 Yes! Announcement thread to our frontend where you can try the 7B: https://twitter.com/PointNetwork/status/1637178814210908160
