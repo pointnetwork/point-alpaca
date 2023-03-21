@@ -28,6 +28,16 @@ wget -P encrypted/ -i filelist.txt
 for f in "encrypted"/*; do if [ -f "$f" ]; then python3 decrypt.py "$f" "original/7B/consolidated.00.pth" "result/"; fi; done
 ```
 
+Windows users can use the equivalent powershell command: 
+
+```
+Get-ChildItem "encrypted" | ForEach-Object {
+    if($_.Attributes -eq 'Archive') {
+        python3 decrypt.py $_.FullName "original/7B/consolidated.00.pth" "result/"
+    }
+}
+```
+
 You will have finetuned weights in the `result/` folder.
 
 Now that you have them, you can delete the files in `encrypted/` folder.
