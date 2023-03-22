@@ -18,7 +18,7 @@ Try it here: https://alpaca.point.space
 
 It takes 16 GB of VRAM unquantized, 8 GB of VRAM when 8-bit quantized (11 GB of normal RAM to load it).
 
-It's confirmed that it can run on a single RTX 3060 in 8-bit mode. For 8-bit mode, set `load_in_8bit=True` in `chat.py`
+It's confirmed that it can run on a single RTX 3060 12GB in 8-bit mode. For 8-bit mode, set `load_in_8bit=True` in `chat.py`
 
 ## How to distill the weights
 
