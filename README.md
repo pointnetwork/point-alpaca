@@ -14,6 +14,10 @@ Yes! Announcement thread to our frontend where you can try the 7B: https://twitt
 
 Try it here: https://alpaca.point.space
 
+## What are hardware requirements to run it locally?
+
+It takes 7-8 GB of VRAM. It's confirmed that it can run on a single RTX 3090.
+
 ## How to distill the weights
 
 1. Put LLaMA weights into `original/` folder, such that 7B version would be at `original/7B`
