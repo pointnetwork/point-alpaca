@@ -16,7 +16,7 @@ Try it here: https://alpaca.point.space
 
 ## What are hardware requirements to run it locally?
 
-It takes 7-8 GB of VRAM. It's confirmed that it can run on a single RTX 3090.
+It takes 7-8 GB of VRAM when 8-bit quantized (16GB without quantization). It's confirmed that it can run on a single RTX 3090.
 
 ## How to distill the weights
 
